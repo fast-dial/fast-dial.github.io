@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!--Thanks to Pranav Rajpurkar (https://rajpurkar.github.io/) for this great leaderboard template!
+We made some modifications to our TweetQA dataset.-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <title>Question Answering in Social Media</title>
+    <meta name="description" content="With social media becoming increasingly popular on which lots of news and real-time events are reported, developing automated question answering systems is critical to the effectiveness of many applications that rely on real-time knowledge. While previous question answering (QA) datasets have concentrated on formal text like news and Wikipedia, we present the first large-scale dataset for QA over social media data. To make the tweets are meaningful and contain interesting information, we gather tweets used by journalists to write news articles. We then ask human annotators to write questions and answers upon these tweets. Unlike other QA datasets like SQuAD in which the answers are extractive, we allow the answers to be abstractive. The task requires model to read a short tweet and a question and outputs a text phrase (does not need to be in the tweet) as the answer.">
+    <meta name="keywords" content="Social Media, Question Answering, Tweet, Twitter, TweetQA, TwitterQA">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    <meta property="og:image" content="image/logo.png">
+    <link rel="icon" href="image/favicon.ico">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+  
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top" id="topNavbar" role="navigation">
+      <div class="container clearfix" id="navContainer">
+        <div class="rightNav">
+          <div class="collapseDiv">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="glyphicon glyphicon-menu-hamburger"></span>
+            </button>
+          </div>
+        </div>
+        <div class="leftNav">
+          <div class="brandDiv">
+            <a class="navbar-brand" href="http://nlp.cs.ucsb.edu">UCSB NLP</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="header">
+        <div id="header-desc">
+            <p style="font-size:10rem;"><b>TweetQA</b></p>
+            <p style="font-size:3.5rem;">Question Answering in Social Media</p>
+        </div>
+    </div>
+
+<!--    <div class="cover" id="topCover">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 thumb">
+            <h1 id="appTitle">TweetQA</h1>
+            <h2 id="appSubtitle">Question Answering in Social Media</h2></div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="cover" id="contentCover">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 thumb">
+            <div class="infoCard">
+              <div class="infoBody">
+                <div class="infoHeadline">
+                  <h2>What is TweetQA?</h2>
+                </div>
+                <p>
+                  With social media becoming increasingly popular on which lots of news and real-time events are reported, developing automated question answering systems is critical to the effectiveness of many applications that rely on real-time knowledge. While previous question answering (QA) datasets have concentrated on formal text like news and Wikipedia, we present the first large-scale dataset for QA over social media data. To make the tweets are meaningful and contain interesting information, we gather tweets used by journalists to write news articles. We then ask human annotators to write questions and answers upon these tweets. Unlike other QA datasets like SQuAD in which the answers are extractive, we allow the answers to be abstractive. The task requires model to read a short tweet and a question and outputs a text phrase (does not need to be in the tweet) as the answer.
+                </p>
+
+                <p>
+                <a class="btn actionBtn" href="https://arxiv.org/abs/1907.06292" target="_blank">TweetQA Paper (Xiong et al. ACL '19)</a>
+                </p>
+                <hr>
+
+                <div class="infoHeadline">
+                  <h2>TweetQA Example</h2>
+                </div>
+                <p>
+                <img src="image/example.png" class="img-responsive mx-auto d-block"/>
+                </p>
+                <hr>
+
+                <div class="infoHeadline">
+                  <h2>Comparison</h2>
+                </div>
+                <p>
+                <img src="image/squad_hwords.png" class="img-responsive mx-auto d-block"/>
+                </p>
+                <p><center>1000 most distinctive domain words from SQuAD.</center></p>
+                <br/>
+
+                <p>
+                <img src="image/tweetqa_hwords.png" class="img-responsive mx-auto d-block"/>
+                </p>
+                <p><center>1000 most distinctive domain words from TweetQA.</center></p>
+                <hr>
+
+                <div class="infoHeadline">
+                  <h2>Getting Started</h2>
+                </div>
+
+                <p>We've built a few resources to help you get started with the dataset.</p>
+                <p>Download a copy of the dataset (distributed under the <a href="http://creativecommons.org/licenses/by-sa/4.0/legalcode">CC BY-SA 4.0</a> license):
+                  <ul class="list-unstyled">
+                    <li>
+                      <a class="btn actionBtn inverseBtn" href="https://sites.cs.ucsb.edu/~xwhan/datasets/tweetqa.zip" download>TweetQA Data and Evaluation Script</a></li>
+                  </ul>
+                </p>
+
+                <p>To evaluate your models on our official testing dataset, please check our codalab competition site:</p>
+                <a class="btn actionBtn inverseBtn" href="https://competitions.codalab.org/competitions/20307?secret_key=6684a0cf-9eac-4ac1-a648-213a3961e0fc" target="_blank">CodaLab Submission</a>
+                <hr>
+
+                <div class="infoHeadline">
+                  <h2>Citations</h2>
+                </div>
+
+                <p>Please cite our paper as below if you use the TweetQA dataset.</p>
+                <br/>
+
+                <pre><code>@inproceedings{xiong2019tweetqa,
+  title={TweetQA: A Social Media Focused Question Answering Dataset},
+  author={Xiong, Wenhan and Wu, Jiawei and Wang, Hong and Kulkarni, Vivek and Yu, Mo and Guo, Xiaoxiao and Chang, Shiyu and Wang, William Yang},
+  booktitle={Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics},
+  year={2019}
+}</code></pre>
+                
+                <hr>
+
+                <div class="infoHeadline">
+                  <h2>Have Questions?</h2>
+                </div>
+                <p>For dataset issues, email to <a href="mailto:xwhan@cs.ucsb.edu" target="_blank">xwhan@cs.ucsb.edu</a>. <br>
+                  For submission issues, please email Hong Wang at <a href="mailto:hongwang600@cs.ucsb.edu" target="_blank">hongwang600@cs.ucsb.edu</a>.
+                </p>
+                <p>
+                </p>                
+                <hr>
+
+                </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 thumb">
+            <div class="infoCard">
+              <div class="infoBody">
+                <div class="infoHeadline">
+                  <h2>Leaderboard</h2></div>
+                <table class="table performanceTable">
+                  <tr>
+                    <th>Rank</th>
+                    <th>Model</th>
+                    <th>BLEU-1</th>
+                    <th>METEOR</th>
+                    <th>ROUGE-L</th>
+                  </tr>
+
+                  <tr class="human-row">
+                    <td></td>
+                    <td style="word-break:break-word;">EXTRACT-Upperbound<p class="institution"><a href="https://arxiv.org/abs/1907.06292" target="_blank">(Xiong et al. ACL '19)</a></p></td>
+                    <td>75.1</td>
+                    <td>69.8</td>
+                    <td>75.6</td>
+                  </tr>
+
+                  <tr class="human-row">
+                    <td></td>
+                    <td style="word-break:break-word;">Human Performance<p class="institution"><a href="https://arxiv.org/abs/1907.06292" target="_blank">(Xiong et al. ACL '19)</a></p></td>
+                    <td>70.0</td>
+                    <td>66.7</td>
+                    <td>73.5</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>1</p>
+                      <span class="date label label-default">June 02, 2021</span>
+                    </td>
+                    <td style="word-break:break-word;">ST-F-MTL<p class="institution">SUDA NLP</p></td>
+                    </td>
+                    <td><b>76.84</b></td>
+                    <td><b>73.30</b></td>
+                    <td><b>77.97</b></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>2</p>
+                      <span class="date label label-default">Oct 28, 2019</span>
+                    </td>
+                    <td style="word-break:break-word;">NUT-RC<p class="institution">SUDA NLP</p><p><a href="https://www.aclweb.org/anthology/2020.coling-main.242/" target="_blank">Huang et al. COLING' 20</a></p></td>
+                    </td>
+                    <td><b>76.1</b></td>
+                    <td><b>72.2</b></td>
+                    <td><b>77.8</b></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>3</p>
+                      <span class="date label label-default">Oct 07, 2019</span>
+                    </td>
+                    <td style="word-break:break-word;">xlnet<p class="institution">PingAnLifeInsuranceAI</p></td>
+                    <td><b>73.3</b></td>
+                    <td><b>70.0</b></td>
+                    <td><b>75.0</b></td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <p>4</p>
+                      <span class="date label label-default">Oct 11, 2019</span>
+                    </td>
+                    <td style="word-break:break-word;">xlnet<p class="institution">Jiayun Lin</p></td>
+                    <td><b>72.8</b></td>
+                    <td><b>69.8</b></td>
+                    <td><b>74.5</b></td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <p>5</p>
+                      <span class="date label label-default">Oct 16, 2019</span>
+                    </td>
+                    <td style="word-break:break-word;">TKR(single model)<p class="institution">Anonymous</p></td>
+                    <td><b>69.0</b></td>
+                    <td><b>65.6</b></td>
+                    <td><b>71.2</b></td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <p>6</p>
+                      <span class="date label label-default">Oct 27, 2019</span>
+                    </td>
+                    <td style="word-break:break-word;">bert(single model)<p class="institution">FastNet</p></td>
+                    <td><b>66.2</b></td>
+                    <td><b>63.2</b></td>
+                    <td><b>68.1</td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <p>7</p>
+                      <span class="date label label-default">July 01, 2019</span>
+                    </td>
+                    <td style="word-break:break-word;">BERT Base<p class="institution">Baseline</p><p><a href="https://arxiv.org/abs/1907.06292" target="_blank">(Xiong et al. ACL '19)</a></p></td>
+                    <td><b>61.4</b></td>
+                    <td><b>58.6</b></td>
+                    <td><b>64.1</b></td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>8</p>
+                      <span class="date label label-default">July 01, 2019</span>
+                    </td>
+                    <td style="word-break:break-word;">Generative<p class="institution">Baseline</p><p><a href="https://arxiv.org/abs/1907.06292" target="_blank">(Xiong et al. ACL '19)</a></p></td>
+                    <td>36.1</td>
+                    <td>31.8</td>
+                    <td>39.0</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>9</p>
+                      <span class="date label label-default">July 01, 2019</span>
+                    </td>
+                    <td style="word-break:break-word;">BiDAF<p class="institution">Baseline</p><p><a href="https://arxiv.org/abs/1907.06292" target="_blank">(Xiong et al. ACL '19)</a></p></td>
+                    <td>34.9</td>
+                    <td>31.4</td>
+                    <td>38.6</td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <p>10</p>
+                      <span class="date label label-default">July 01, 2019</span>
+                    </td>
+                    <td style="word-break:break-word;">Query-Matching<p class="institution">Baseline</p><p><a href="https://arxiv.org/abs/1907.06292" target="_blank">(Xiong et al. ACL '19)</a></p></td>
+                    <td>11.2</td>
+                    <td>12.1</td>
+                    <td>17.4</td>
+                  </tr>
+                </table>
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-default navbar-static-bottom footer">
+      <div class="container clearfix">
+        <div class="rightNav">
+          <div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://nlp.cs.ucsb.edu" target="_blank">UCSB NLP Group</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+
+</html>
